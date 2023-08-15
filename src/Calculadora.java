@@ -8,10 +8,10 @@ public class Calculadora {
         int numero1 = lector.nextInt();
         System.out.println("Ingrese el número 2");
         int numero2 = lector.nextInt();
-        System.out.println("Ingrese la operación (+, -, *, /)");
+        System.out.println("Ingrese la operación ((+)=suma, (+)=resta), (*)=multiplicación, (/)=división, (M)=modulo, (P)=Potencia");
         char operacion = lector.next().charAt(0);
 
-        switch (operacion) {
+        switch  (operacion) {
             case '+' :
                 // Operación suma:
                 int suma = numero1 + numero2;
@@ -34,8 +34,24 @@ public class Calculadora {
                 double division = (double) numero1 / numero2;
                 System.out.println("La división es " + division);
                 break;
+            case 'M' :
+                // Operación Modulo:
+
+                double modulo = (double) numero1 % numero2;
+                System.out.println("El módulo es " + modulo);
+                break;
+            case 'P' :
+                // Operación Modulo:
+                System.out.println("El numero base es "+ numero1 );
+                System.out.println("El numero exponente es "+ numero2);
+
+                double potencia = Math.pow(numero1, numero2);
+                System.out.println("El numero *"+ numero1 + "* elevado al *"+numero2+"* es: " + potencia);
+                break;
             default:
                 System.out.println("Operación inválida");
+
         }
     }
 }
+
